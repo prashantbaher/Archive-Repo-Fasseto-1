@@ -16,3 +16,6 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\PropertyChanged.dll
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\PropertyChanged.xml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.csproj.CopyComplete
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\Microsoft.Windows.Shell.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\Microsoft.Windows.Shell.pdb
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Fonts.baml

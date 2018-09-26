@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\App.xaml
-11151548125
+61138005991
 
 11-1365395141
 15394049613
-MainWindow.xaml;
+MainWindow.xaml;Styles\Colors.xaml;Styles\Buttons.xaml;Styles\Texts.xaml;Styles\Windows.xaml;Styles\Fonts.xaml;
 
-False
+True
 
