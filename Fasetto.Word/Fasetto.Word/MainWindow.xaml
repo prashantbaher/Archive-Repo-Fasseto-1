@@ -7,9 +7,71 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
+        x:Name="AppWindow"
+        WindowStartupLocation="CenterScreen"
         Icon="Images/Logo/logo-small.png"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Welcome, friend!" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <!--Outer border with the drop shadow margin-->
+                        <Border Padding="{Binding OuterMarginThickness}">
+                            <!--Main window outline-->
+                            <Grid>
+                                
+                                <!--Window border and dropshadow-->
+                                <Border CornerRadius="{Binding WindowCornerRadius}"
+                                        Background="{StaticResource ForegroundLightBrush}">
+                                    
+                                    <!--Drop shadow effect-->
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
+                                    </Border.Effect>
+                                    
+                                </Border>
+                                
+                                <!-- The main window content -->
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        
+                                        <!--Title Bar-->
+                                        <RowDefinition Height="{Binding TitleHeightGridLength}" />
+                                        <!--Drop shadow-->
+                                        <RowDefinition Height="Auto" />
+                                        <!--Window content-->
+                                        <RowDefinition Height="*" />
+                                        
+                                    </Grid.RowDefinitions>
+                                    
+                                    <!--Title Bar -->
+                                    <Grid Grid.Column="0" Grid.Row="0" Background="Red" Panel.ZIndex="1">
+                                        
+                                    </Grid>
+                                    
+                                </Grid>
+                                
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            ResizeBorderThickness="{Binding ResizeBorderThickness}"
+            CaptionHeight="{Binding TitleHeight}"
+            GlassFrameThickness="0"
+            CornerRadius="0"
+            />
+    </WindowChrome.WindowChrome>
+    
+    <Grid Background="Red">
         
     </Grid>
 </Window>
