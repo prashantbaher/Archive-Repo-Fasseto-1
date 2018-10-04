@@ -19,3 +19,9 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\Microsoft.Windows.Shell.dll
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\bin\Debug\Microsoft.Windows.Shell.pdb
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Fonts.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\App.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Colors.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Buttons.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Texts.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Styles\Windows.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\GeneratedInternalTypeHelper.g.cs
