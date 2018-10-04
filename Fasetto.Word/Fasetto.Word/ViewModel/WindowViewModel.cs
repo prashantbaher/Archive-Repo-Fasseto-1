@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace Fasetto.Word
 {
@@ -85,12 +86,51 @@ namespace Fasetto.Word
         /// <summary>
         /// The height of the title bar / caption of the window
         /// </summary>
-        public int TitleHeight { get; set; } = 35;
+        public int TitleHeight { get; set; } = 25;
 
         /// <summary>
         /// The height of the title bar / caption of the window, taking into account the size of resize border
         /// </summary>
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
+
+        /// <summary>
+        /// The smallest width the window can go to
+        /// </summary>
+        public int WindowMinimumWidth { get; set; } = 400;
+
+        /// <summary>
+        /// The smallest height the window can go to
+        /// </summary>
+        public int WindowMinimumHeight { get; set; } = 400;
+
+        /// <summary>
+        /// The padding of the inner content of the main window
+        /// </summary>
+        public Thickness InnerContentPadding { get { return new Thickness(ResizeBorder); } }
+
+        #endregion
+
+        #region Commands
+
+        /// <summary>
+        /// The command to minimize the window
+        /// </summary>
+        public ICommand MinimizeCommand { get; set; }
+
+        /// <summary>
+        /// The command to maximize the window
+        /// </summary>
+        public ICommand MaximizeCommand { get; set; }
+
+        /// <summary>
+        /// The command to close the window
+        /// </summary>
+        public ICommand CloseCommand { get; set; }
+
+        /// <summary>
+        /// The command to show the system menu of the window
+        /// </summary>
+        public ICommand MenuCommand { get; set; }
 
         #endregion
 
@@ -114,6 +154,28 @@ namespace Fasetto.Word
                 OnPropertyChanged(nameof(WindowRadius));
                 OnPropertyChanged(nameof(WindowCornerRadius));
             };
+
+            // Create Commands
+            MinimizeCommand = new RelayCommand(() => mWindow.WindowState = WindowState.Minimized);
+            MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
+            CloseCommand = new RelayCommand(() => mWindow.Close());
+            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
+
+            // Fix window resizer issue
+            var ReSizer = new WindowResizer(mWindow);
+        }
+
+        #endregion
+
+        #region Private Helpers
+
+        private Point GetMousePosition()
+        {
+            // Position of the mouse relative to the window
+            var Position = Mouse.GetPosition(mWindow);
+
+            // Add the window position so its a "ToScreen"
+            return new Point(Position.X + mWindow.Left,  Position.Y + mWindow.Top);
         }
 
         #endregion
