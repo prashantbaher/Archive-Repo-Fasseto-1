@@ -30,7 +30,7 @@ namespace Fasetto.Word
         #region Public Properties
 
         /// <summary>
-        /// The size of the resize border around the window
+        /// The sizek of the resize border around the window
         /// </summary>
         public int ResizeBorder { get; set; } = 5;
 
@@ -106,7 +106,12 @@ namespace Fasetto.Word
         /// <summary>
         /// The padding of the inner content of the main window
         /// </summary>
-        public Thickness InnerContentPadding { get { return new Thickness(ResizeBorder); } }
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
+
+        /// <summary>
+        /// The current page of the application
+        /// </summary>
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
         #endregion
 
