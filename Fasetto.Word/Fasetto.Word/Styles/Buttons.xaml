@@ -112,9 +112,28 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource WordBlueBrush}" />
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordBlue}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordOrange}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -161,9 +180,27 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource WordOrangeBrush}" />
-                        </Trigger>
+                        <!--IMPORTANT: To set the foreground color, we did not have to name the target. In this case, it is chrome.-->
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordOrange}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetProperty="Foreground.Color"
+                                                    />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource  ForegroundLight}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetProperty="Foreground.Color"
+                                                    />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
