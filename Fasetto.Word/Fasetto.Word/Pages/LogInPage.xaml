@@ -1,4 +1,5 @@
 ﻿<local:BasePage
+      x:TypeArguments="local:LoginViewModel"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,6 +7,7 @@
       xmlns:local="clr-namespace:Fasetto.Word"
       xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="Fasetto.Word.LogInPage"
       mc:Ignorable="d" 
+      x:Name="Page"
       d:DesignHeight="500" d:DesignWidth="500"
       Title="LogInPage">
 
@@ -43,9 +45,9 @@
                             <TextBox Tag="E-mail" />
 
                             <!--Password-->
-                            <PasswordBox Tag="Password" Margin="0 0 0 30" />
+                            <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
 
-                            <Button Content="Next" HorizontalAlignment="Center" />
+                            <Button Content="Next" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" HorizontalAlignment="Center" />
 
                         </StackPanel>
 
