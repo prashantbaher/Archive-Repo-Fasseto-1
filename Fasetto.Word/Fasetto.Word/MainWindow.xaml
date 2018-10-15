@@ -123,10 +123,23 @@
     </WindowChrome.WindowChrome>
 
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
         <!--Blue background Image-->
         <Grid.Background>
             <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 300 300" ImageSource="/Images/Background/emoji-background.png" />
         </Grid.Background>
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}" />
+        
+        <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}" />
+
+        <!--Side menu control-->
+        <local:SideUserControl>
+            <Button Content="Test" />
+        </local:SideUserControl>
     </Grid>
+    
 </Window>

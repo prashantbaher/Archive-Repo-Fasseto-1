@@ -9,5 +9,10 @@
         /// The initial Login Page
         /// </summary>
         Login = 0,
+
+        /// <summary>
+        /// The main Chat Page
+        /// </summary>
+        Chat = 1
     }
 }
