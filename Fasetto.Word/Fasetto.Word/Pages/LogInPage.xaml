@@ -30,7 +30,7 @@
                         <StackPanel>
 
                             <!--Sign up header-->
-                            <TextBlock Text="Sign Up"
+                            <TextBlock Text="Sign In"
                                    FontSize="{StaticResource FontSizeLarge}"
                                    FontFamily="{StaticResource LatoRegular}"
                                    Foreground="{StaticResource WordBlueBrush}" />
@@ -42,12 +42,16 @@
                                        Foreground="{StaticResource ForegroundDarkBrush}" />
 
                             <!--Email-->
-                            <TextBox Tag="E-mail" />
+                            <TextBox Text="{Binding Email}" Tag="E-mail" />
 
                             <!--Password-->
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
 
-                            <Button Content="Next" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" HorizontalAlignment="Center" />
+                            <Button Content="Login" 
+                                    local:IsBusyProperty.Value="{Binding LoginIsRunning}"
+                                    Command="{Binding LoginCommand}" 
+                                    CommandParameter="{Binding ElementName=Page}" 
+                                    HorizontalAlignment="Center" />
 
                         </StackPanel>
 

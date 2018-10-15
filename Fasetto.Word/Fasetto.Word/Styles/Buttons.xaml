@@ -8,6 +8,7 @@
         <!--Order is important here-->
         <ResourceDictionary Source="Colors.xaml" />
         <ResourceDictionary Source="Fonts.xaml" />
+        <ResourceDictionary Source="Texts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--Hoverless button style for Application Icon-->
@@ -85,6 +86,8 @@
         <Setter Property="Padding" Value="30 8" />
         <Setter Property="Margin" Value="0 10" />
 
+        <Setter Property="local:IsBusyProperty.Value" Value="False" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
@@ -95,12 +98,21 @@
                                          RenderPressed="{TemplateBinding IsPressed}" 
                                          RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
                                          SnapsToDevicePixels="True">
-                        <TextBlock Text="{TemplateBinding Content}" 
+                        <Grid>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                   Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                    Margin="{TemplateBinding Padding}" 
                                    FontFamily="{TemplateBinding FontFamily}"
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <TextBlock
+                                Style="{StaticResource SppingText}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}, ConverterParameter=True}"
+                                />
+                        </Grid>
                     </Themes:ButtonChrome>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsKeyboardFocused" Value="True">

@@ -26,4 +26,3 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.csproj.CopyComplete
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.exe
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.pdb
-C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.csprojAssemblyReference.cache
