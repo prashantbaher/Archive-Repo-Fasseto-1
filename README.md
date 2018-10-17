@@ -6,4 +6,4 @@ This application is mimic of AngelSix WPF tutorial. Where Luke, teaches how to c
 
 This tutorial can be divided into following diffrent sections.
 
-- [ ] Adding resources to start with
+- Adding resources to start with
