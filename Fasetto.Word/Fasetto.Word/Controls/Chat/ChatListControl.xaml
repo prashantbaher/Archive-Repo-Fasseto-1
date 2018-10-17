@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Fasetto.Word.ChatListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Fasetto.Word"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--Container for item control-->
+    <Grid Background="{StaticResource ForegroundLightBrush}">
+        <!--Scrollviewer to give ability to scroll for item controls-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <!--Item control-->
+            <ItemsControl>
+                <!--Accessing template of item control-->
+                <ItemsControl.ItemTemplate>
+                    <!--Inside the template, defining the data template of item control-->
+                    <DataTemplate>
+                        <!--Assigning the content of this item control to ChatListItemControl-->
+                        <local:ChatListItemControl />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

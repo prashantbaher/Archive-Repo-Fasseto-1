@@ -1,12 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Fasetto.Word">
+                    xmlns:local="clr-namespace:Fasetto.Word" 
+                    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
 
     <!--Referencing the color and fonts dictionaries-->
     <ResourceDictionary.MergedDictionaries>
         <!--Order is important here-->
         <ResourceDictionary Source="Colors.xaml" />
         <ResourceDictionary Source="Fonts.xaml" />
+        <ResourceDictionary Source="Texts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--Hoverless button style for Application Icon-->
@@ -25,13 +27,13 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--System Icon Button-->
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource Hoverless}" x:Key="SystemIconButton">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Padding" Value="5" />
     </Style>
-    
+
     <!--Windows Control Button-->
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" x:Key="WindowControlButton">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
@@ -62,7 +64,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <!--Window Close Button-->
     <Style TargetType="{x:Type Button}" x:Key="WindowCloseButton" BasedOn="{StaticResource WindowControlButton}">
         <Style.Triggers>
@@ -72,6 +74,220 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    
+
+    <!--Regular Button-->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+
+        <Setter Property="Background" Value="{StaticResource WordOrangeBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
+        <Setter Property="Padding" Value="30 8" />
+        <Setter Property="Margin" Value="0 10" />
+
+        <Setter Property="local:IsBusyProperty.Value" Value="False" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Themes:ButtonChrome x:Name="Chrome"
+                                         RoundCorners="True"
+                                         BorderBrush="{TemplateBinding BorderBrush}" 
+                                         Background="{TemplateBinding Background}"
+                                         RenderPressed="{TemplateBinding IsPressed}" 
+                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
+                                         SnapsToDevicePixels="True">
+                        <Grid>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                   Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                   Margin="{TemplateBinding Padding}" 
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <TextBlock
+                                Style="{StaticResource SppingText}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}, ConverterParameter=True}"
+                                />
+                        </Grid>
+                    </Themes:ButtonChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordBlue}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordOrange}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Text Button-->
+    <Style x:Key="TextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
+        <Setter Property="Padding" Value="30 8" />
+        <Setter Property="Margin" Value="0 10" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Themes:ButtonChrome x:Name="Chrome"
+                                         RoundCorners="True"
+                                         BorderBrush="{TemplateBinding BorderBrush}" 
+                                         Background="{TemplateBinding Background}"
+                                         RenderPressed="{TemplateBinding IsPressed}" 
+                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
+                                         SnapsToDevicePixels="True">
+                        <TextBlock Text="{TemplateBinding Content}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                   Margin="{TemplateBinding Padding}" 
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Themes:ButtonChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+                        </Trigger>
+                        <!--IMPORTANT: To set the foreground color, we did not have to name the target. In this case, it is chrome.-->
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordOrange}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetProperty="Foreground.Color"
+                                                    />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource  ForegroundLight}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetProperty="Foreground.Color"
+                                                    />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Icon Button-->
+    <Style x:Key="IconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+
+        <Setter Property="Background" Value="{StaticResource WordBlueBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontAwesome}" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="0" />
+
+        <Setter Property="Width" Value="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Themes:ButtonChrome x:Name="Chrome"
+                                         RoundCorners="True"
+                                         BorderBrush="{TemplateBinding BorderBrush}" 
+                                         Background="{TemplateBinding Background}"
+                                         RenderPressed="{TemplateBinding IsPressed}" 
+                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
+                                         SnapsToDevicePixels="True">
+                        <Viewbox>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                   Margin="{TemplateBinding Padding}" 
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Viewbox>
+                    </Themes:ButtonChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordLightBlue}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordBlue}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Chrome"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>
