@@ -31,3 +31,7 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.csprojAssemblyReference.cache
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\SideUserControl.g.cs
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\SideUserControl.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListItemControl.g.cs
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListItemControl.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListControl.g.cs
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListControl.baml

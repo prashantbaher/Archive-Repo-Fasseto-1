@@ -43,7 +43,7 @@
                     </Grid>
 
                     <!--The user content-->
-                    <ContentPresenter Grid.Row="1" />
+                    <ContentPresenter Content="{TemplateBinding Content}" Grid.Row="1" />
 
                 </Grid>
 
