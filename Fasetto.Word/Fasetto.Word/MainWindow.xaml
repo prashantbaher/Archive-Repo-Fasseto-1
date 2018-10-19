@@ -138,7 +138,7 @@
 
         <!--Side menu control-->
         <local:SideUserControl>
-            <Button Content="Test" />
+            <local:ChatListControl />
         </local:SideUserControl>
     </Grid>
     

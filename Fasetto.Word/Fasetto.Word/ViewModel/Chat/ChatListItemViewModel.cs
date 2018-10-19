@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fasetto.Word
+﻿namespace Fasetto.Word
 {
     /// <summary>
     /// A view model for each chat list item in the overview chat list
@@ -31,5 +25,15 @@ namespace Fasetto.Word
         /// For example FF00FF for Red and Blue mixed
         /// </summary>
         public string ProfilePictureRGB { get; set; }
+
+        /// <summary>
+        /// True if there are unread messages in this chat
+        /// </summary>
+        public bool NewContentAvailable { get; set; }
+
+        /// <summary>
+        /// True, if this item is currently selected
+        /// </summary>
+        public bool IsSelected { get; set; }
     }
 }
