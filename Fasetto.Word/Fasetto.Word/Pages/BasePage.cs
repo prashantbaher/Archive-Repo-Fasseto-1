@@ -1,8 +1,7 @@
-﻿using System.Windows.Controls;
-using System.Windows;
-using System;
+﻿using Fasetto.Word.Core;
 using System.Threading.Tasks;
-using System.Windows.Media.Animation;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
@@ -10,7 +9,7 @@ namespace Fasetto.Word
     /// A base page for all pages to gain base functionality
     /// </summary>
     public class BasePage<VM> : Page
-        where VM : BaseViewModel, new ()
+        where VM : BaseViewModel, new()
     {
         #region Private Members
 
@@ -43,8 +42,9 @@ namespace Fasetto.Word
         /// </summary>
         public VM ViewModel
         {
-            get { return mViewModel; }
+            // get { return mViewModel; }
 
+            get => mViewModel; // This is new style
             set
             {
                 // If nothing has changed, return the value
@@ -73,7 +73,7 @@ namespace Fasetto.Word
                 this.Visibility = Visibility.Collapsed;
 
             // Listen out for the page loading
-            this.Loaded += BasePage_Loaded;
+            this.Loaded += BasePage_LoadedAsync;
 
             // Create a default view model
             this.ViewModel = new VM();
@@ -88,18 +88,17 @@ namespace Fasetto.Word
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private async void BasePage_LoadedAsync(object sender, System.Windows.RoutedEventArgs e)
         {
-            await AnimateIn();
-
-            
+            // Animate the page in
+            await AnimateInAsync();
         }
 
         /// <summary>
         /// Animates the page in
         /// </summary>
         /// <returns></returns>
-        public async Task AnimateIn()
+        public async Task AnimateInAsync()
         {
             // Make sure we have something to do
             if (this.PageLoadAnimation == PageAnimation.None)
@@ -110,7 +109,7 @@ namespace Fasetto.Word
                 case PageAnimation.SlideAndFadeInFromRight:
 
                     // Start the animation
-                    await this.SlideAndFadeInFromRight(SlideSecond);
+                    await this.SlideAndFadeInFromRightAsync(SlideSecond);
 
                     break;
             }
@@ -120,7 +119,7 @@ namespace Fasetto.Word
         /// Animates the page out
         /// </summary>
         /// <returns></returns>
-        public async Task AnimateOut()
+        public async Task AnimateOutAsync()
         {
             if (this.PageUnLoadAnimation == PageAnimation.None)
                 return;
@@ -130,7 +129,7 @@ namespace Fasetto.Word
                 case PageAnimation.SlideAndFadeOutToLeft:
 
                     // Start the animation
-                    await this.SlideAndFadeOutToLeft(SlideSecond);
+                    await this.SlideAndFadeOutToLeftAsync(SlideSecond);
                     break;
             }
         }
