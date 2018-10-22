@@ -1,66 +1,120 @@
 ﻿<UserControl x:Class="Fasetto.Word.ChatListItemControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Fasetto.Word"
+             xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d" 
              Height="60"
              d:DesignHeight="60" d:DesignWidth="300">
-    
-    <Grid Background="{StaticResource ForegroundLightBrush}">
-        
-        <Grid.ColumnDefinitions>
-            <!--New message indicating bar & profile picture-->
-            <ColumnDefinition Width="Auto" />
-            <!--Main content-->
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <!--New message indicating bar-->
-        <Border Grid.Column="0" 
-                Background="Red"
-                Width="3"
-                HorizontalAlignment="Left" />
-        
-        <!--Profile picture padding-->
-        <Border Grid.Column="0"
-                Padding="7">
-            <!--Profile picture background-->
-            <Border Background="{StaticResource WordBlueBrush}"
-                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
-                    CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}">
-                <!--Profile picture initials-->
-                <TextBlock Text="{Binding Initials}"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Foreground="{StaticResource ForegroundLightBrush}"
-                           FontSize="{StaticResource FontSizeAverage}"
-                           FontFamily="{StaticResource LatoRegular}" />
+    <UserControl.Resources>
+        <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        
+                        <!--#region Main content-->
+                        <Border x:Name="background" Background="{StaticResource ForegroundLightBrush}">
+                            <Grid x:Name="Container" Background="Transparent">
 
-            </Border>
-        </Border>
-        
-        <!--Main content-->
-        <Border Grid.Column="1" Padding="0 0 7 0">
-            <StackPanel  
-                    VerticalAlignment="Center">
-                <!--Name-->
-                <TextBlock Text="Prashant Baher" 
-                       Foreground="{StaticResource WordBlueBrush}"
-                       TextTrimming="CharacterEllipsis"
-                       FontFamily="{StaticResource LatoRegular}" />
+                                <Grid.ColumnDefinitions>
+                                    <!--New message indicating bar & profile picture-->
+                                    <ColumnDefinition Width="Auto" />
+                                    <!--Main content-->
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                <!--Message-->
-                <TextBlock Text="This new char app is awesome. I bet this will be fast too"
-                       Foreground="{StaticResource ForegroundDarkBrush}"
-                       FontFamily="{StaticResource LatoRegular}" 
-                       TextTrimming="CharacterEllipsis" />
+                                <!--New message indicating bar-->
+                                <Border Grid.Column="0" 
+                                    Background="Red"
+                                    Width="3"
+                                    HorizontalAlignment="Left"
+                                    Visibility="{Binding NewContentAvailable, Converter={local:BooleanToVisibiltyConvertor}, ConverterParameter=True}"
+                                    />
 
+                                <!--Profile picture padding-->
+                                <Border Grid.Column="0"
+                                    Padding="7">
+                                    <!--Profile picture background-->
+                                    <Border Background="{Binding ProfilePictureRGB, Converter={local:StringRGBToBrushConverter}}"
+                                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}">
+                                        <!--Profile picture initials-->
+                                        <TextBlock Text="{Binding Initials}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="{StaticResource ForegroundLightBrush}"
+                                               FontSize="{StaticResource FontSizeAverage}"
+                                               FontFamily="{StaticResource LatoRegular}" />
+                                    </Border>
+                                </Border>
 
-            </StackPanel>
-        </Border>
+                                <!--Main content-->
+                                <Border Grid.Column="1" Padding="0 0 7 0">
+                                    <StackPanel VerticalAlignment="Center">
+                                        <!--Name-->
+                                        <TextBlock Text="{Binding Name}" 
+                                               Foreground="{StaticResource WordBlueBrush}"
+                                               TextTrimming="CharacterEllipsis"
+                                               FontFamily="{StaticResource LatoRegular}" />
 
-    </Grid>
-    
+                                        <!--Message-->
+                                        <TextBlock Text="{Binding Message}"
+                                               Foreground="{StaticResource ForegroundDarkBrush}"
+                                               FontFamily="{StaticResource LatoRegular}" 
+                                               TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </Border>
+
+                            </Grid>
+                        </Border>
+                        <!--#endregion-->
+                        
+                        <!--#region Hover effect-->
+                        <ControlTemplate.Triggers>
+
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter Property="Background" 
+                                        TargetName="background"
+                                        Value="{StaticResource WordVeryLightBlueBrush}" />
+                            </DataTrigger>
+                            
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="{StaticResource WordVeryLightBlue}"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Container"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <!--Storyboard is use for animation. Always use storyboard for animation because it is hardware accelarated-->
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="Transparent"
+                                                    Duration="0:0:0.5"
+                                                    Storyboard.TargetName="Container"
+                                                    Storyboard.TargetProperty="Background.Color" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                        <!--#endregion-->
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <ContentControl Style="{StaticResource ContentStyle}"
+                    d:DataContext="{x:Static core:ChatListItemDesignModel.Instance}"/>
 </UserControl>

@@ -1,0 +1,13 @@
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Fasetto.Word.Core.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Fasetto.Word.Core.pdb
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Ninject.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\PropertyChanged.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Ninject.xml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\PropertyChanged.xml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.g.resources
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.csproj.CoreCompileInputs.cache
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.csproj.CopyComplete
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.dll
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.pdb

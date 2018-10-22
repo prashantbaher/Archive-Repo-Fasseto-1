@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Fasetto.Word.Core;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Fasetto.Word
@@ -107,11 +108,6 @@ namespace Fasetto.Word
         /// The padding of the inner content of the main window
         /// </summary>
         public Thickness InnerContentPadding { get; set; } = new Thickness(0);
-
-        /// <summary>
-        /// The current page of the application
-        /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         #endregion
 
