@@ -91,13 +91,11 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Themes:ButtonChrome x:Name="Chrome"
-                                         RoundCorners="True"
-                                         BorderBrush="{TemplateBinding BorderBrush}" 
-                                         Background="{TemplateBinding Background}"
-                                         RenderPressed="{TemplateBinding IsPressed}" 
-                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
-                                         SnapsToDevicePixels="True">
+                    <Border x:Name="Chrome"
+                            CornerRadius="5"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
                         <Grid>
                             <TextBlock Text="{TemplateBinding Content}"
                                    Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}}"
@@ -107,20 +105,14 @@
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                             <TextBlock
-                                Style="{StaticResource SppingText}"
+                                Style="{StaticResource SpiningText}"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibiltyConvertor}, ConverterParameter=True}"
                                 />
                         </Grid>
-                    </Themes:ButtonChrome>
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
-                        </Trigger>
-                        <Trigger Property="ToggleButton.IsChecked" Value="True">
-                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
                         </Trigger>
@@ -168,27 +160,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Themes:ButtonChrome x:Name="Chrome"
-                                         RoundCorners="True"
-                                         BorderBrush="{TemplateBinding BorderBrush}" 
-                                         Background="{TemplateBinding Background}"
-                                         RenderPressed="{TemplateBinding IsPressed}" 
-                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
-                                         SnapsToDevicePixels="True">
+                    <Border x:Name="Chrome"
+                            CornerRadius="5"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
                         <TextBlock Text="{TemplateBinding Content}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                    Margin="{TemplateBinding Padding}" 
                                    FontFamily="{TemplateBinding FontFamily}"
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Themes:ButtonChrome>
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
-                        </Trigger>
-                        <Trigger Property="ToggleButton.IsChecked" Value="True">
-                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
                         </Trigger>
@@ -235,13 +219,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Themes:ButtonChrome x:Name="Chrome"
-                                         RoundCorners="True"
-                                         BorderBrush="{TemplateBinding BorderBrush}" 
-                                         Background="{TemplateBinding Background}"
-                                         RenderPressed="{TemplateBinding IsPressed}" 
-                                         RenderDefaulted="{TemplateBinding Button.IsDefaulted}" 
-                                         SnapsToDevicePixels="True">
+                    <Border x:Name="Chrome"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
                         <Viewbox>
                             <TextBlock Text="{TemplateBinding Content}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
@@ -250,14 +231,8 @@
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Viewbox>
-                    </Themes:ButtonChrome>
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="RenderDefaulted" TargetName="Chrome" Value="True"/>
-                        </Trigger>
-                        <Trigger Property="ToggleButton.IsChecked" Value="True">
-                            <Setter Property="RenderPressed" TargetName="Chrome" Value="True"/>
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
                         </Trigger>

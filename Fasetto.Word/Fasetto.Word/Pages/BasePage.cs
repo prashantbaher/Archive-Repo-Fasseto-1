@@ -45,6 +45,7 @@ namespace Fasetto.Word
             // get { return mViewModel; }
 
             get => mViewModel; // This is new style
+
             set
             {
                 // If nothing has changed, return the value
