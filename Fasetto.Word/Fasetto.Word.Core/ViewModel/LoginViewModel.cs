@@ -70,7 +70,7 @@ namespace Fasetto.Word.Core
         {
             await RunCommandAsync(() => this.LoginIsRunning, async () =>
             {
-                await Task.Delay(8 * 1000);
+                await Task.Delay(3 * 1000);
 
                 var email = this.Email;
 
