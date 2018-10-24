@@ -49,7 +49,7 @@ namespace Fasetto.Word
             var storyBoard = new Storyboard();
 
             // Adds slides from right animation
-            storyBoard.AddSlideOutToLeft(seconds, page.WindowWidth);
+            storyBoard.AddSlideToLeft(seconds, page.WindowWidth);
 
             // Adds fade-in animation
             storyBoard.AddFadeOut(seconds);

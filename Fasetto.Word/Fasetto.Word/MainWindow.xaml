@@ -20,7 +20,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!--Outer border with the drop shadow margin-->
-                        <Border Padding="{Binding OuterMarginThickness}">
+                        <Border Margin="{Binding OuterMarginThickness}">
                             <!--Main window outline-->
                             <Grid>
                                 
@@ -100,7 +100,7 @@
                                                                         
                                     <!--Page Content-->
                                     <Border Background="{StaticResource WordBlueBrush}" Grid.Row="1" Padding="{Binding InnerContentPadding}">
-                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                        <ContentPresenter Content="{TemplateBinding Content}" ClipToBounds="True" />
                                     </Border>
                                     
                                 </Grid>
@@ -125,7 +125,7 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
@@ -141,7 +141,7 @@
                                  Converter={local:ApplicationPageValueConverter}}" />
 
         <!--Side menu control-->
-        <local:SideUserControl>
+        <local:SideUserControl Width="250" local:AnimateSlideInFromLeftProperty.Value ="False">
             <local:ChatListControl />
         </local:SideUserControl>
     </Grid>

@@ -211,7 +211,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}" />
-        <Setter Property="Padding" Value="10" />
+        <Setter Property="Padding" Value="20" />
         <Setter Property="Margin" Value="0" />
 
         <Setter Property="Width" Value="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" />
