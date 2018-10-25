@@ -12,7 +12,7 @@
         Icon="Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="Welcome, friend" Height="550" Width="650">
+        Title="Welcome, friend" Height="525" Width="450">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -133,12 +133,13 @@
         <Grid.Background>
             <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 300 300" ImageSource="/Images/Background/emoji-background.png" />
         </Grid.Background>
-        
-        <Frame Grid.Column="1" 
-               x:Name="MainFrame" 
-               Content="{Binding ApplicationViewModel.CurrentPage, 
+
+        <local:PageHost Grid.Column="1" 
+               d:DataContext=""
+               DataContext="{Binding ApplicationViewModel.CurrentPage, 
                                  Source={x:Static local:ViewModelLocator.Instance}, 
-                                 Converter={local:ApplicationPageValueConverter}}" />
+                                 Converter={local:ApplicationPageValueConverter}}"
+               CurrentPage="{Binding}" />
 
         <!--Side menu control-->
         <local:SideUserControl Width="250" local:AnimateSlideInFromLeftProperty.Value ="False">

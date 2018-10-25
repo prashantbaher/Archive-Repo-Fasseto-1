@@ -74,10 +74,10 @@ namespace Fasetto.Word
             // If the value is true
             if (value)
                 // Animate in
-                await element.SlideAndFadeInFromLeftAsync(FirstLoad ? 0.0f : 0.3f, KeepMargin: false);
+                await element.SlideAndFadeInFromLeftAsync(FirstLoad ? 0 : 0.3f, KeepMargin: false);
             else
                 // Animate out
-                await element.SlideAndFadeOutToLeftAsync(FirstLoad ? 0.0f : 0.3f, KeepMargin: false);
+                await element.SlideAndFadeOutToLeftAsync(FirstLoad ? 0 : 0.3f, KeepMargin: false);
         }
     }
 }

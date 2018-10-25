@@ -10,6 +10,7 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Fasetto.Word.csprojAssemblyReference.cache
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListControl.g.cs
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListItemControl.g.cs
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\PageHost.g.cs
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\SideUserControl.g.cs
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Pages\ChatPage.g.cs
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Pages\RegisterPage.g.cs
@@ -22,6 +23,7 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\App.baml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListControl.baml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\Chat\ChatListItemControl.baml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\PageHost.baml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Controls\SideUserControl.baml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Pages\ChatPage.baml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word\obj\Debug\Pages\RegisterPage.baml

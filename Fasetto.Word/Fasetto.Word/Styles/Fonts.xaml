@@ -24,10 +24,10 @@
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
     <Style TargetType="{x:Type ListItem}" BasedOn="{StaticResource BaseStyle}" />
 
-    <system:Double x:Key="FontSizeSmall">14</system:Double>
-    <system:Double x:Key="FontSizeAverage">18</system:Double>
-    <system:Double x:Key="FontSizeRegular">20</system:Double>
-    <system:Double x:Key="FontSizeLarge">30</system:Double>
+    <system:Double x:Key="FontSizeSmall">11</system:Double>
+    <system:Double x:Key="FontSizeAverage">15</system:Double>
+    <system:Double x:Key="FontSizeRegular">18</system:Double>
+    <system:Double x:Key="FontSizeLarge">25</system:Double>
 
     <system:String x:Key="FontAwesomeChatIcon">&#xf086;</system:String>
     <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>

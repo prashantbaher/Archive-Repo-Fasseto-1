@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Fasetto.Word.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,7 +20,7 @@ namespace Fasetto.Word
     /// <summary>
     /// Interaction logic for ChatPage.xaml
     /// </summary>
-    public partial class ChatPage : Page
+    public partial class ChatPage : BasePage<LoginViewModel>
     {
         public ChatPage()
         {

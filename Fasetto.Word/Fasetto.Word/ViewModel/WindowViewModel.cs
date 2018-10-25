@@ -87,7 +87,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The height of the title bar / caption of the window
         /// </summary>
-        public int TitleHeight { get; set; } = 25;
+        public int TitleHeight { get; set; } = 30;
 
         /// <summary>
         /// The height of the title bar / caption of the window, taking into account the size of resize border
