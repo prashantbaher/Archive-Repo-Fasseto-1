@@ -12,7 +12,7 @@
         Icon="Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="Welcome, friend" Height="550" Width="650">
+        Title="Welcome, friend" Height="525" Width="550">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -79,7 +79,7 @@
                                         <!--Title-->
                                         <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Stretch="Uniform">
                                             <StackPanel>
-                                                <TextBlock FontFamily="{StaticResource LatoBold}" FontSize="{StaticResource FontSizeRegular}" Margin="0 0 0 -5">
+                                                <TextBlock FontFamily="{StaticResource LatoBold}" FontSize="{StaticResource FontSizeLarge}" Margin="0 0 0 -5">
                                                     <Run Text="W" Foreground="{StaticResource WordOrangeBrush}" />
                                                     <Run Text="O" Foreground="{StaticResource WordBlueBrush}" />
                                                     <Run Text="R" Foreground="{StaticResource WordRedBrush}" />
@@ -100,7 +100,7 @@
                                                                         
                                     <!--Page Content-->
                                     <Border Background="{StaticResource WordBlueBrush}" Grid.Row="1" Padding="{Binding InnerContentPadding}">
-                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                        <ContentPresenter Content="{TemplateBinding Content}" ClipToBounds="True" />
                                     </Border>
                                     
                                 </Grid>
@@ -125,7 +125,7 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
@@ -133,15 +133,18 @@
         <Grid.Background>
             <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 300 300" ImageSource="/Images/Background/emoji-background.png" />
         </Grid.Background>
-        
-        <Frame Grid.Column="1" 
-               x:Name="MainFrame" 
-               Content="{Binding ApplicationViewModel.CurrentPage, 
+
+        <local:PageHost Grid.Column="1" 
+               d:DataContext=""
+               DataContext="{Binding ApplicationViewModel.CurrentPage, 
                                  Source={x:Static local:ViewModelLocator.Instance}, 
-                                 Converter={local:ApplicationPageValueConverter}}" />
+                                 Converter={local:ApplicationPageValueConverter}}"
+               CurrentPage="{Binding}" />
 
         <!--Side menu control-->
-        <local:SideUserControl>
+        <local:SideUserControl Width="250" 
+                               local:AnimateSlideInFromLeftProperty.Value ="{Binding ApplicationViewModel.SideMenuVisible, 
+                                 Source={x:Static local:ViewModelLocator.Instance}}">
             <local:ChatListControl />
         </local:SideUserControl>
     </Grid>

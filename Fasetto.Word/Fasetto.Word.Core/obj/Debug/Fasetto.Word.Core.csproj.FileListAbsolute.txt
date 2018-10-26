@@ -6,6 +6,7 @@ C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Newtonsoft.Json.xml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\Ninject.xml
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\bin\Debug\PropertyChanged.xml
+C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.csprojAssemblyReference.cache
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.g.resources
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.csproj.CoreCompileInputs.cache
 C:\Users\prashant\Documents\GitHub\Fasseto-Application\Fasetto.Word\Fasetto.Word.Core\obj\Debug\Fasetto.Word.Core.csproj.CopyComplete

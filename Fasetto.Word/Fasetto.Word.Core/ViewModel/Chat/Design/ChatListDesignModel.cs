@@ -52,7 +52,36 @@ namespace Fasetto.Word.Core
                     ProfilePictureRGB = "00d405",
                     IsSelected = true
                 },
-                                new ChatListItemViewModel
+                new ChatListItemViewModel
+                {
+                    Initials = "PB",
+                    Name = "Prashant Baher",
+                    Message = "This chat app is awesome. I bet this will be fast too",
+                    ProfilePictureRGB = "3099c5"
+                },
+                new ChatListItemViewModel
+                {
+                    Initials = "JA",
+                    Name = "Jesse",
+                    Message = "Hey dude, here are the new icons",
+                    ProfilePictureRGB = "fe4503"
+                },
+                new ChatListItemViewModel
+                {
+                    Initials = "PL",
+                    Name = "Parnell",
+                    Message = "The new server is up, go to 192.168.1.1",
+                    ProfilePictureRGB = "00d405"
+                },
+                new ChatListItemViewModel
+                {
+                    Initials = "PL",
+                    Name = "Parnell",
+                    Message = "The new server is up, go to 192.168.1.1",
+                    ProfilePictureRGB = "00d405",
+                    IsSelected = true
+                },
+                new ChatListItemViewModel
                 {
                     Initials = "PB",
                     Name = "Prashant Baher",
