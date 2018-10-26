@@ -11,14 +11,9 @@
       x:Name="Page"
       d:DesignHeight="500" d:DesignWidth="500"
       Title="Chat">
-    
+
     <Border>
-        <TextBlock Text="Hello Fasetto"
-                   Foreground="{StaticResource ForegroundLightBrush}"
-                   FontFamily="{StaticResource LatoBold}"
-                   FontSize="{StaticResource FontSizeLarge}"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center" />
+        <local:ChatMessageListControl />
     </Border>
 
 </local:BasePage>

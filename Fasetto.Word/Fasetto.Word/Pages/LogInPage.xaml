@@ -32,14 +32,14 @@
 
                             <!--Sign up header-->
                             <TextBlock Text="Sign In"
-                                   FontSize="{StaticResource FontSizeLarge}"
+                                   FontSize="{StaticResource FontSizeXXLarge}"
                                    FontFamily="{StaticResource LatoRegular}"
                                    Foreground="{StaticResource WordBlueBrush}" />
 
                             <!--Sign up sub text-->
                             <TextBlock Text="It's about to get fun" 
                                        Margin="0 0 0 15"
-                                       FontSize="{StaticResource FontSizeRegular}"
+                                       FontSize="{StaticResource FontSizeLarge}"
                                        Foreground="{StaticResource ForegroundDarkBrush}" />
 
                             <!--Email-->
