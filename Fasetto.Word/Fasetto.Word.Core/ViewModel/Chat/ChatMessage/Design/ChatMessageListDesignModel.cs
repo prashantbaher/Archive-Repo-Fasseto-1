@@ -40,13 +40,13 @@ namespace Fasetto.Word.Core
                 },
                 new ChatMessageListItemViewModel
                 {
-                    Initials = "Prashant",
-                    SenderName = "PB",
+                    Initials = "PB",
+                    SenderName = "Prashant",
                     Message = "Let me know when you manage to spin the new 2016 server.",
                     ProfilePictureRGB = "3099c5",
                     MessageSentTime = DateTimeOffset.UtcNow,
                     MessageReadTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromDays(1.5)),
-                    SentByMe = false
+                    SentByMe = true
                 },
                 new ChatMessageListItemViewModel
                 {

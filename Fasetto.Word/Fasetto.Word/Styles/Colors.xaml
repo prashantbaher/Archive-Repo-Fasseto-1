@@ -43,7 +43,7 @@
     <SolidColorBrush x:Key="WordDarkBlueBrush" Color="{StaticResource WordDarkBlue}" />
 
     <!--Color for Very light blue-->
-    <Color x:Key="WordVeryLightBlue">#ecf6fb</Color>
+    <Color x:Key="WordVeryLightBlue">#c3e5f3</Color>
     <!--Brush to use this very light blue color-->
     <SolidColorBrush x:Key="WordVeryLightBlueBrush" Color="{StaticResource WordVeryLightBlue}" />
 
