@@ -1,6 +1,7 @@
 # Fasseto-Application
 
-This application is mimic of AngelSix WPF tutorial. Where Luke, teaches how to create a WPF application from start to finish.
+This application is replicate of AngelSix WPF tutorial. 
+Where Luke, teaches how to create a WPF application from start to finish.
 
 ## Custom Window Chrome and Styles
 
