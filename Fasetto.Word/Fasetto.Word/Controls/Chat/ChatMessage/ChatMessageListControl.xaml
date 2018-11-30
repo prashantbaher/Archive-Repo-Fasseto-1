@@ -6,14 +6,13 @@
              xmlns:local="clr-namespace:Fasetto.Word"
              xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300">
     
     <!--Container for item control
     1. define design time data context for item control
     2. background for this item control
     -->
-    <Grid DataContext="{x:Static core:ChatMessageListDesignModel.Instance}" 
-          VerticalAlignment="Bottom">
+    <Grid DataContext="{x:Static core:ChatListDesignModel.Instance}">
         <!--Scrollviewer to give ability to scroll for item controls-->
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <!--Item control-->
